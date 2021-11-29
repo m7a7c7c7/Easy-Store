@@ -1,10 +1,12 @@
 const APIRoutes = require('./routes')
 const express = require('express');
 const app = express();
-const port = 3000;
+const cors= require('cors');
+const port = 5000;
 
 app.use(express.static('public'));
 app.use(express.json());
+app.use(cors());
 
 APIRoutes(app);
 
