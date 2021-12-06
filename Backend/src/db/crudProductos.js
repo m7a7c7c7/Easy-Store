@@ -5,7 +5,8 @@ function getProductos(callback) {
         .then((refDoc) => {
             var arrayProductos = [];
             refDoc.forEach((doc) => {
-                arrayProductos.push(doc.data());
+                arrayProductos.push({...doc.data(),ID:doc.id});
+                //arrayProductos.push(doc.id)
                 //console.log(doc.id, '=>', doc.data());
             })
             callback(arrayProductos);

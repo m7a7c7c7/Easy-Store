@@ -5,7 +5,7 @@ function getFacturas(callback) {
         .then((refDoc) => {
             var arrayFacturas = [];
             refDoc.forEach((doc) => {
-                arrayFacturas.push(doc.data());
+                arrayFacturas.push({...doc.data(),ID:doc.id});
                 //console.log(doc.id, '=>', doc.data());
             })
             callback(arrayFacturas);

@@ -5,9 +5,11 @@ function getProveedores(callback) {
         .then((refDoc) => {
             var arrayProveedores = [];
             refDoc.forEach((doc) => {
-                arrayProveedores.push(doc.data());
+                arrayProveedores.push({...doc.data(),ID:doc.id});
                 //console.log(doc.id, '=>', doc.data());
-            })
+            });
+            
+                
             callback(arrayProveedores);
         })
         .catch(err => {
