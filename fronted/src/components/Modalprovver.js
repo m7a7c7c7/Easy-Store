@@ -3,7 +3,7 @@ import { Button,Table } from 'react-bootstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-class Modalfacver extends React.Component {
+class Modalproveer extends React.Component {
     state = {
         abierto: false,
     }
@@ -30,7 +30,7 @@ class Modalfacver extends React.Component {
 
                 <Modal isOpen={this.state.abierto} style={modalStyles, { maxWidth: "80%",maxHeight:"100%"}}>
                     <ModalHeader>
-                        Factura
+                        Proveedor
                     </ModalHeader>
                     <ModalBody>
                         <FormGroup >
@@ -38,19 +38,19 @@ class Modalfacver extends React.Component {
                             <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
                         </FormGroup>
                         <FormGroup >
-                            <Label for="usuario">CC: &nbsp; </Label>
+                            <Label for="usuario">NOMBRE: &nbsp; </Label>
+                            <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
+                        </FormGroup>
+                        <FormGroup >
+                            <Label for="usuario">NIT: &nbsp; </Label>
+                            <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
+                        </FormGroup>
+                        <FormGroup >
+                            <Label for="usuario">UBICACIÓN: &nbsp; </Label>
                             <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
                         </FormGroup>
                         <FormGroup >
                             <Label for="usuario">TELÉFONO: &nbsp; </Label>
-                            <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
-                        </FormGroup>
-                        <FormGroup >
-                            <Label for="usuario">FECHA: &nbsp; </Label>
-                            <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
-                        </FormGroup>
-                        <FormGroup >
-                            <Label for="usuario">MÉTODO DE PAGO: &nbsp; </Label>
                             <input style={{ left: "45%", position: "fixed" }} type="text" id="usuario" />
                         </FormGroup>
                     </ModalBody>
@@ -63,6 +63,7 @@ class Modalfacver extends React.Component {
                                     <th>CANTIDAD</th>
                                     <th>ESPECIFICACIONES</th>
                                     <th>MARCA</th>
+                                    <th>PRECIO DE COMPRA</th>
                                     <th>PRECIO DE VENTA</th>
                                 </tr>
                             </thead>
@@ -72,8 +73,9 @@ class Modalfacver extends React.Component {
                                     <td>SALSA DE TOMATE</td>
                                     <td>10</td>
                                     <td>500 GR</td>
-                                    <th>FRUCO</th>
-                                    <th>00000</th>
+                                    <td>FRUCO</td>
+                                    <td>00000</td>
+                                    <td>0000</td>
                                 </tr>
                             </tbody>
                             <tbody>
@@ -82,8 +84,9 @@ class Modalfacver extends React.Component {
                                     <td>SALSA DE TOMATE</td>
                                     <td>10</td>
                                     <td>500 GR</td>
-                                    <th>FRUCO</th>
-                                    <th>00000</th>
+                                    <td>FRUCO</td>
+                                    <td>00000</td>
+                                    <td>0000</td>
                                 </tr>
                             </tbody>
                         </Table>
@@ -97,4 +100,4 @@ class Modalfacver extends React.Component {
     }
 }
 
-export default Modalfacver;
+export default Modalproveer;

@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Table, TableProps } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { searchFac } from './../APis/Facturascrud';
 
 const TableFact = () => {
-    const [results, setResults] = useState([]);
-    useEffect(() => {
-        searchFac(setResults);
-    }, []);
-
     return (
         <>
             <React.Fragment>
@@ -22,13 +16,16 @@ const TableFact = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {results.map((result) => (
-                                <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF", boxShadow: "5px 4px 4px 0px #0094FF", border: "1px", borderBlockColor: "blue" }}>
-                                    <td class="table-checkbox" id={result.ID}><input type="checkbox"></input></td>
-                                    <td>{result.ID}</td>
-                                    <td>{result.CC}</td>
-                                </tr>
-                            ))}
+                            <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF", boxShadow: "5px 4px 4px 0px #0094FF", border: "1px", borderBlockColor: "blue" }}>
+                                <td class="table-checkbox"><input type="checkbox"></input></td>
+                                <td>H7pCTjThFNVtV57djrmA</td>
+                                <td>1992912</td>
+                            </tr>
+                            <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF" }}>
+                                <td class="table-checkbox"><input type="checkbox"></input></td>
+                                <td>kqd5EVRqlbLM5lWEFaYl</td>
+                                <td>128922</td>
+                            </tr>
                         </tbody>
                     </Table>
                 </div>

@@ -4,9 +4,8 @@ import { Navigate } from "react-router-dom";
 import TableFact from './../components/TableFact';
 import Modalfacver from './../components/Modalfactver';
 import Modalfacedt from '../components/Modalfacedt';
-import Modalfacadd from '../components/Modalfacañadir';
-import Modalfaceliminar from '../components/Modalfaceliminar';
-
+import Modalfacañd from "../components/Modalfacañd";
+import {Container,Button} from 'react-bootstrap';
 const Facturas = () => {
   var user = JSON.parse(localStorage.getItem("user"));
   if (user == undefined) {
@@ -19,9 +18,8 @@ const Facturas = () => {
         <TableFact/>
         <Modalfacver/>
         <Modalfacedt/>
-        <Modalfacadd/>
-        <Modalfaceliminar/>
-        {/* <Button style={{color:"black",backgroundColor:"#0094FF",position:"absolute",bottom:"10px",left:"80%",width:"120px"}}>ELIMINAR</Button> */}
+        <Modalfacañd/>
+        <Button style={{color:"black",backgroundColor:"#0094FF",position:"absolute",bottom:"10px",left:"80%",width:"120px"}}>ELIMINAR</Button>
       </React.Fragment>
     </>
   )

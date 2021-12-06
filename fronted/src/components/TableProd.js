@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Table, TableProps } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { searchProd, idsearchProd } from '../APis/Productoscrud';
-
 
 const TableProd = () => {
-    const [results, setResults] = useState([]);
-    useEffect(() => {
-        searchProd(setResults);
-    }, []);
-
-    
     return (
         <>
             <React.Fragment>
@@ -29,18 +21,26 @@ const TableProd = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {results.map((result) => (
-                                <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF", boxShadow: "5px 4px 4px 0px #0094FF", border: "1px", borderBlockColor: "blue" }}>
-                                    <td class="table-checkbox"><input type="checkbox"  value={result.ID} id={result.NOMBRE}></input></td>
-                                    <td>{result.ID}</td>
-                                    <td>{result.NOMBRE}</td>
-                                    <td>{result.CANTIDAD}</td>
-                                    <td>{result.ESPECIFICACIONES}</td>
-                                    <td>{result.MARCA}</td>
-                                    <td>{result.PRECIOC}</td>
-                                    <td>{result.PRECIOV}</td>
-                                </tr>
-                            ))}
+                            <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF", boxShadow: "5px 4px 4px 0px #0094FF", border: "1px", borderBlockColor: "blue" }}>
+                                <td class="table-checkbox"><input type="checkbox"></input></td>
+                                <td>H7pCTjThFNVtV57djrmA</td>
+                                <td>SALSA DE TOMATE</td>
+                                <td>10</td>
+                                <td>500 GR</td>
+                                <td>FRUCO</td>
+                                <td>00000</td>
+                                <td>00000</td>
+                            </tr>
+                            <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF" }}>
+                                <td class="table-checkbox"><input type="checkbox"></input></td>
+                                <td>kqd5EVRqlbLM5lWEFaYl</td>
+                                <td>FIDEOS</td>
+                                <td>8</td>
+                                <td>500 GR</td>
+                                <td>MUÑECA</td>
+                                <td>00000</td>
+                                <td>00000</td>
+                            </tr>
                         </tbody>
                     </Table>
                 </div>

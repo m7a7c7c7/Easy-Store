@@ -1,40 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Table} from 'react-bootstrap';
+import React from 'react';
+import { Table, TableProps } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { searchProv } from './../APis/Proveedorescrud';
-const prov = localStorage.getItem('prov')
-
+import { searchProv } from '../APis/Proveedorescrud';
+const prov=localStorage.getItem('prov')
 
 const TableProv = () => {
-  const [results, setResults] = useState([]);
-  useEffect(() => {
-    searchProv(setResults);
-  }, []);
-  
+  searchProv(prov,(res)=>{
+      console.log(res);
+  })
   return (
     <>
       <React.Fragment>
         <div>
-          <Table class="Table" style={{ position: "absolute", margin: "1", padding: "20px", boxSizing: "border-box", top: "170px" }} width="90%">
+          <Table class="Table" style={{position:"absolute",margin:"1",padding:"20px",boxSizing:"border-box", top:"170px"}} width="90%">
             <thead>
-              <tr style={{ textAlign: "center", backgroundColor: "#FFF8B8" }}>
+              <tr style={{textAlign:"center",backgroundColor:"#FFF8B8"}}>
+                <th></th>
                 <th>ID</th>
                 <th>NOMBRE</th>
                 <th>NIT</th>
-                <th>TELEFONO</th>
-                <th>UBICACIÓN</th>
+                <th>TELÉFONO</th>
               </tr>
             </thead>
             <tbody>
-              {results.map((result) => (
-                <tr style={{ textAlign: "center", backgroundColor: "#EEFAFF", boxShadow: "5px 4px 4px 0px #0094FF", border: "1px", borderBlockColor: "blue" }}>
-                  <td>{result.ID}</td>
-                  <td>{result.NOMBRE}</td>
-                  <td>{result.NIT}</td>
-                  <td>{result.TELEFONO}</td>
-                  <td>{result.UBICACION}</td>
-                </tr>
-              ))}
+              <tr style={{textAlign:"center",backgroundColor:"#EEFAFF",boxShadow:"5px 4px 4px 0px #0094FF",border:"1px",borderBlockColor:"blue"}}>
+                <td class="table-checkbox"><input type="checkbox"></input></td>
+                <td>H7pCTjThFNVtV57djrmA</td>
+                <td>JAIVISA</td>
+                <td>19028812</td>
+                <td>313477902</td>
+              </tr>
+              <tr style={{textAlign:"center",backgroundColor:"#EEFAFF"}}>
+                <td class="table-checkbox"><input type="checkbox"></input></td>
+                <td>kqd5EVRqlbLM5lWEFaYl</td>
+                <td>VERDUFRUTAS</td>
+                <td>18918282</td>
+                <td>3129918232</td>
+              </tr>
             </tbody>
           </Table>
         </div>
